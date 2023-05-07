@@ -1,1 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<body>
 
+  <p>Перед скриптом...</p>
+    
+  <script>
+    function math_oper(a,b,c)
+    {
+      let oper;
+      if(c == "+")
+      {
+        oper = +a + +b
+        console.log(+a + "+" + +b + "=" + oper);
+      }
+      else if (c == "-")
+      {
+        oper = +a - +b
+        console.log(+a + "-" + +b + "=" + oper);
+      }
+      else if (c == "*")
+      {
+        oper = +a * +b
+        console.log(+numb_1 + "*" + +b + "=" + oper);
+      }
+      else if (c == "/")
+      {
+        oper = +a / +b
+        console.log(+a + "/" + +b + "=" + oper);
+      }
+    }
+    
+    let numb_1 = prompt('Введіть перше число', '');
+    let numb_2 = prompt('Введіть друге число', '');
+    let znak = prompt('Введіть знак операції', '');;
+    math_oper(numb_1, numb_2, znak);
+    
+    
+  </script>
+
+  <p>...Після скрипту.</p>
+</body>
+</html>
