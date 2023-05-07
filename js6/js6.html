@@ -1,1 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<body>
 
+  <p>Перед скриптом...</p>
+    
+  <script>
+    
+    function filterBy(arr, type)
+    {
+        let i = 0;
+        while (i < arr.length) 
+        {
+           if(typeof arr[i] == type) {arr.splice(i,1);}
+           else {i++}
+        }
+        console.log(arr);
+    }
+
+    let arr = ['hello', 'world', 23, '23', null];
+    let type = 'number';
+    filterBy(arr, type);
+
+  </script>
+
+  <p>...Післе скрипту.</p>
+</body>
+</html>
