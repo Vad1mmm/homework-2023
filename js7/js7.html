@@ -1,1 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<body>
 
+    <p>Перед скриптом...</p>
+    
+    <div id="arr"></div>
+  
+    <script>
+        function list(list) 
+        {
+            let list_ul = document.createElement('ul');
+            let list_li;
+            function element(div, array) 
+            {
+                div.append(list_ul);
+                array.forEach(function(item) 
+                {
+                    list_li = document.createElement('li');
+                    list_li.append(document.createTextNode(item));
+                    list_ul.append(list_li);
+                });
+            }
+            div = document.getElementById('arr');
+            element(div, list);
+        }
+        list(['Vadim', '2', 'KNUCA', 'java', 'user', 23, null]);
+    </script>
+
+    <p>...Після скрипту.</p>
+</body>
+</html>
