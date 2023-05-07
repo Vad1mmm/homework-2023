@@ -1,1 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<body>
 
+  <p>Перед скриптом...</p>
+    
+  <script>
+    
+
+
+    function createNewUser()
+    {
+        let firstName = prompt('Ваше ім*я', '');
+        let lastName = prompt('Ваше прізвище', '');
+        let birthday = prompt('Ваша дата народження', '');
+        birthday = birthday.split('.').reverse().join('.')
+        birthday = new Date(birthday);
+        let newUser = 
+        {
+            fname: firstName,
+            lname: lastName,
+            bd: birthday,
+            getLogin()
+            {
+                console.log(this.fname.charAt(0).toLowerCase()+this.lname.toLowerCase());
+            },
+            getAge()
+            {
+                let age = new Date().getFullYear() - this.bd.getFullYear();
+                console.log("Вік користувача:"+ age);
+            },
+            getPassword()
+            {
+                console.log(this.fname.charAt(0).toUpperCase()+this.lname.toLowerCase()+this.bd.getFullYear());
+            }
+        }
+        newUser.getLogin();
+        newUser.getAge();
+        newUser.getPassword();
+    }
+    createNewUser();
+  </script>
+
+  <p>...Післе скрипту.</p>
+</body>
+</html>
