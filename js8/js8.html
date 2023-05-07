@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .form 
+        {
+            margin-top: 10px;
+        }
+        span 
+        {
+            padding: 4px 10px 5px 10px;
+            font-size: 13px;
+            line-height: 15px;
+            border: 1px solid #d2d2d2;
+            border-radius: 40px;
+            cursor: pointer;
+        }
+        span::after 
+        {
+            border: 1px solid #d2d2d2;
+            border-radius: 40px;
+            content: 'x';
+            margin-left: 10px;
+            padding: 1px 5px ;
+        }
+    </style>
+</head>
 
+<body>
+    <div id="span"></div>
+    <div class="form">
+        <label>Price: </label>
+        <input type="text" id="price">
+        <p id="error">Please enter correct price</p>
+    </div>
+<script>
+    document.getElementById('error').style.display = 'none';
+    document.getElementById("price").onblur = function () 
+    {
+        price.style.borderColor = "green";
+        if (price.value <= 0) 
+        {
+            document.getElementById('error').style.display='block';
+            document.getElementById('price').style.borderColor = "red";
+        } 
+        else 
+        {
+            let span1 = document.getElementById('span');
+            let span2 = document.createElement('span');
+            let text = document.createTextNode("Поточна ціна: "+price.value);
+            span2.append(text);
+            span1.append(span2);
+            span2.setAttribute('onclick', `span.remove();`);
+            document.getElementById('error').style.display = 'none';
+        }
+    };
+</script>
+</body>
+</html>
